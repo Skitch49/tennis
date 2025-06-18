@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import com.skitch49.tennis.repository.HealthCheckRepository;
-import com.skitch49.tennis.rest.HealthCheckController;
 import com.skitch49.tennis.service.HealthCheckService;
+import com.skitch49.tennis.web.HealthCheckController;
 
 @SpringBootTest
 class TennisApplicationTests {

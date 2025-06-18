@@ -1,4 +1,4 @@
-package com.skitch49.tennis.rest;
+package com.skitch49.tennis.web;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,17 +14,17 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 
-@Tag(name="HealthCheck API")
+@Tag(name = "HealthCheck API")
 @RestController
 public class HealthCheckController {
 
     @Autowired
     private HealthCheckService healthCheckService;
 
-    @Operation(summary = "Returns application status",description = "Return the application status")
+    @Operation(summary = "Returns application status", description = "Return the application status")
     @ApiResponses(value = {
-        @ApiResponse(responseCode = "200",description = "Healthchek status with some details",content = {@Content(mediaType = "application/json",
-        schema = @Schema(implementation = HealthCheck.class))})
+            @ApiResponse(responseCode = "200", description = "Healthchek status with some details", content = {
+                    @Content(mediaType = "application/json", schema = @Schema(implementation = HealthCheck.class)) })
     })
     @GetMapping("/healthcheck")
     public HealthCheck healthCheck() {
